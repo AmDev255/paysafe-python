@@ -12,7 +12,7 @@ permissions:
 jobs:
   build:
     name: Build package artifact
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -33,7 +33,7 @@ jobs:
     name: Publish (disabled)
     needs: build
     if: ${{ false }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     environment: release
     steps:
       - uses: actions/download-artifact@v4
